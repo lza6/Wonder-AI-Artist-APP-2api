@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wonder AI 2API · Demo</title>
+<style>
+  :root{
+    --bg:#0b0d12; --panel:#141824; --panel-2:#1b2130; --line:#2a3244;
+    --text:#e8ecf4; --muted:#8b97ad; --accent:#7c5cff; --accent-2:#33d6a6;
+    --danger:#ff5c72; --radius:14px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#1d1638 0,var(--bg) 55%);
+    color:var(--text);font:15px/1.55 "Poppins","Segoe UI",system-ui,sans-serif;min-height:100vh}
+  header{display:flex;align-items:center;gap:14px;padding:18px 26px;border-bottom:1px solid var(--line)}
+  header h1{font-size:17px;margin:0;letter-spacing:.02em}
+  .badge{font-size:12px;padding:3px 9px;border-radius:999px;background:rgba(124,92,255,.16);
+    color:#b7a6ff;border:1px solid rgba(124,92,255,.4)}
+  main{display:grid;grid-template-columns:385px 1fr;gap:20px;padding:22px 26px;align-items:start}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+  .panel h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 14px}
+  label{display:block;font-size:12px;color:var(--muted);margin:14px 0 6px}
+  label:first-of-type{margin-top:0}
+  textarea,select,input{width:100%;background:var(--panel-2);color:var(--text);border:1px solid var(--line);
+    border-radius:10px;padding:10px 12px;font:inherit;outline:none}
+  textarea{resize:vertical;min-height:92px}
+  textarea:focus,select:focus{border-color:var(--accent)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .style-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:58px;gap:8px;margin-top:8px;
+    max-height:190px;overflow-y:auto;padding-right:2px}
+  .style-grid button{padding:0;border:2px solid transparent;border-radius:9px;overflow:hidden;background:var(--panel-2);
+    cursor:pointer;height:58px;position:relative}
+  .style-grid button img{width:100%;height:100%;object-fit:cover;display:block}
+  .style-grid button span{position:absolute;inset:auto 0 0 0;font-size:9px;background:rgba(0,0,0,.66);
+    padding:2px 3px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .style-grid button.on{border-color:var(--accent)}
+  button.primary{width:100%;margin-top:18px;padding:12px;border-radius:10px;border:0;cursor:pointer;
+    background:linear-gradient(135deg,var(--accent),#5b8bff);color:#fff;font-weight:600;font-size:15px}
+  button.primary:disabled{opacity:.55;cursor:progress}
+  .stats{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:14px}
+  .stats b{color:var(--text);font-weight:600}
+  .account{background:var(--panel-2);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--muted);
+    word-break:break-all;margin-bottom:14px}
+  .account code{color:var(--accent-2)}
+  .results{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:14px;min-height:120px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+    display:flex;flex-direction:column}
+  .card img{width:100%;display:block;background:#0f1320}
+  .card .bar{display:flex;gap:8px;padding:9px 11px;font-size:12px;color:var(--muted);align-items:center}
+  .card .bar a,.card .bar button{margin-left:auto;color:#b7a6ff;text-decoration:none;background:none;border:0;
+    cursor:pointer;font:inherit;padding:0}
+  .card .bar button:hover,.card .bar a:hover{color:#fff}
+  .empty{color:var(--muted);font-size:13px;border:1px dashed var(--line);border-radius:var(--radius);
+    padding:34px;text-align:center;grid-column:1/-1}
+  .error{border-color:rgba(255,92,114,.5);color:#ffb3be;background:rgba(255,92,114,.08);
+    padding:11px 13px;border-radius:10px;font-size:13px;margin-bottom:12px;display:none;white-space:pre-wrap}
+  .spinner{width:15px;height:15px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;
+    display:inline-block;vertical-align:-2px;margin-right:8px;animation:spin .8s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (max-width:940px){main{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Wonder AI Art Generator · 2API</h1>
+  <span class="badge" id="ver">v5.1.4</span>
+  <span class="badge" id="upstream">api.wonderai.app</span>
+</header>
+<main>
+  <section class="panel">
+    <h2>生成参数</h2>
+    <div class="account" id="account">账号加载中…</div>
+    <div class="error" id="error"></div>
+
+    <label for="prompt">Prompt</label>
+    <textarea id="prompt">a lighthouse on a cliff at sunset, volumetric light, cinematic</textarea>
+
+    <label>风格</label>
+    <div class="style-grid" id="styles"></div>
+
+    <div class="row">
+      <div>
+        <label for="provider">模型通道</label>
+        <select id="provider">
+          <option value="premium">premium（默认）</option>
+          <option value="flux">flux</option>
+          <option value="falai">falai</option>
+          <option value="normal">normal</option>
+        </select>
+      </div>
+      <div>
+        <label for="ar">宽高比</label>
+        <select id="ar">
+          <option value="1:1">1:1 · 1024×1024</option>
+          <option value="16:9">16:9 · 1024×576</option>
+          <option value="9:16">9:16 · 576×1024</option>
+          <option value="4:3">4:3 · 1024×768</option>
+          <option value="3:4">3:4 · 768×1024</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="n">张数 (1–10)</label>
+        <select id="n">
+          <option>1</option><option>2</option><option>4</option><option>6</option><option>10</option>
+        </select>
+      </div>
+      <div>
+        <label for="seed">种子（可选）</label>
+        <input id="seed" placeholder="留空随机" inputmode="numeric">
+      </div>
+    </div>
+
+    <label for="neg">负向提示词（可选）</label>
+    <input id="neg" placeholder="blurry, watermark">
+
+    <button class="primary" id="go">生成</button>
+    <div class="stats" id="stats"></div>
+  </section>
+
+  <section>
+    <div class="results" id="results">
+      <div class="empty">暂无结果。左侧填好 prompt 点「生成」。</div>
+    </div>
+  </section>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+let selectedStyle = "s2";
+
+function showError(msg) {
+  const box = $("error");
+  if (!msg) { box.style.display = "none"; box.textContent = ""; return; }
+  box.style.display = "block";
+  box.textContent = msg;
+}
+
+async function loadStyles() {
+  const res = await fetch("/wonder/styles");
+  const body = await res.json();
+  const box = $("styles");
+  box.innerHTML = "";
+  for (const s of body.data.slice(0, 16)) {
+    const btn = document.createElement("button");
+    btn.title = `${s.name}${s.is_pro ? " · PRO" : ""}`;
+    btn.innerHTML = `<img src="${s.sample}" alt="${s.name}" loading="lazy"><span>${s.name}</span>`;
+    if (s.value === selectedStyle) btn.classList.add("on");
+    btn.onclick = () => {
+      selectedStyle = s.value;
+      [...box.children].forEach((c) => c.classList.remove("on"));
+      btn.classList.add("on");
+    };
+    box.appendChild(btn);
+  }
+  $("ver").textContent = "v5.1.4 · " + body.count + " styles";
+}
+
+async function loadAccount() {
+  try {
+    const res = await fetch("/wonder/account");
+    const a = await res.json();
+    $("account").innerHTML =
+      `账号 <code>${a.userId}</code><br>` +
+      `剩余积分 <b style="color:var(--accent-2)">${a.remainingCredits}</b> · ` +
+      `今日生成 ${a.dailyProcessCount}`;
+  } catch (err) {
+    $("account").textContent = "账号状态获取失败：" + err.message;
+  }
+}
+
+function card(url, elapsed, idx) {
+  const wrap = document.createElement("div");
+  wrap.className = "card";
+  wrap.innerHTML = `
+    <img src="${url}" alt="result ${idx}" referrerpolicy="no-referrer">
+    <div class="bar">
+      <span>${elapsed}s · 1024px</span>
+      <button type="button">4x 超分</button>
+      <a href="${url}" target="_blank" rel="noreferrer">原图</a>
+    </div>`;
+  const btn = wrap.querySelector("button");
+  btn.onclick = async () => {
+    btn.textContent = "超分中…";
+    btn.disabled = true;
+    try {
+      const res = await fetch("/wonder/upscale", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ url }),
+      });
+      const body = await res.json();
+      if (!res.ok) throw new Error(body.detail || res.statusText);
+      wrap.querySelector("img").src = body.url;
+      wrap.querySelector("a").href = body.url;
+      btn.textContent = `已完成 ${body.elapsed}s`;
+    } catch (err) {
+      btn.textContent = "超分失败";
+      showError("超分失败：" + err.message);
+    }
+  };
+  return wrap;
+}
+
+async function generate() {
+  const prompt = $("prompt").value.trim();
+  if (!prompt) { showError("prompt 不能为空"); return; }
+  showError("");
+  $("go").disabled = true;
+  $("go").innerHTML = '<span class="spinner"></span>生成中…';
+  $("results").innerHTML = "";
+  const started = performance.now();
+  const payload = {
+    prompt,
+    style: selectedStyle,
+    provider: $("provider").value,
+    n: Number($("n").value),
+    aspect_ratio: $("ar").value,
+    negative_prompt: $("neg").value.trim() || null,
+    seed: $("seed").value.trim() ? Number($("seed").value.trim()) : null,
+    fix_seed: Boolean($("seed").value.trim()),
+  };
+  try {
+    const res = await fetch("/wonder/image/create", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const body = await res.json();
+    if (!res.ok) throw new Error(body.detail || res.statusText);
+    const elapsed = body.elapsed ?? ((performance.now() - started) / 1000).toFixed(1);
+    const urls = body.urls || [];
+    $("results").innerHTML = "";
+    urls.forEach((url, i) => $("results").appendChild(card(url, elapsed, i + 1)));
+    $("stats").innerHTML =
+      `<span>耗时 <b>${elapsed}s</b></span><span>张数 <b>${urls.length}</b></span>` +
+      `<span>seed <b>${body.seed ?? "-"}</b></span>`;
+  } catch (err) {
+    showError("生成失败：" + err.message);
+    $("results").innerHTML = '<div class="empty">生成失败，检查日志或换 prompt 重试。</div>';
+  } finally {
+    $("go").disabled = false;
+    $("go").textContent = "生成";
+    loadAccount();
+  }
+}
+
+$("go").onclick = generate;
+loadStyles();
+loadAccount();
+</script>
+</body>
+</html>

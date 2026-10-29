@@ -1,0 +1,479 @@
+[
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/Hyperrealistic_new.resized.jpeg",
+  "name": "Hyper Realistic",
+  "value": "s2",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": true,
+  "priority_point": 1000
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/photo.jpg",
+  "name": "Photo",
+  "value": "s4",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": true,
+  "priority_point": 990
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/spooky_house.png",
+  "name": "Past Life",
+  "value": "s52",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": true,
+  "priority_point": 980
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/tattoo.resized.jpeg",
+  "name": "Tattoo",
+  "value": "s34",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": true,
+  "priority_point": 970
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/s18.resized.jpeg",
+  "name": "Oil Painting",
+  "value": "s3",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": true,
+  "priority_point": 960
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/pixar.jpg",
+  "name": "Toon",
+  "value": "s47",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": true,
+  "priority_point": 950
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/s37.resized.jpeg",
+  "name": "Pen&Ink",
+  "value": "s22",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": true,
+  "priority_point": 940
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/color_tattoo.resized.jpg",
+  "name": "Colored Tattoo",
+  "value": "s35",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": true,
+  "priority_point": 930
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/signature.resized.png",
+  "name": "Signature",
+  "value": "s46",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": true,
+  "priority_point": 920
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/epic.resized.jpg",
+  "name": "Epic",
+  "value": "s33",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": true,
+  "priority_point": 910
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/gta_s76.resized.jpg",
+  "name": "Vice",
+  "value": "s49",
+  "is_pro": true,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 900
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/deepfloyd.resized.jpeg",
+  "name": "Text Art",
+  "value": "s28",
+  "is_pro": false,
+  "is_active": false,
+  "show_on_home_screen": true,
+  "priority_point": 892
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/s32.resized.jpeg",
+  "name": "Mythological",
+  "value": "s17",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": true,
+  "priority_point": 890
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/s62.resized.jpeg",
+  "name": "Halloween",
+  "value": "s44",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 880
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/Polaroid_new.resized.jpeg",
+  "name": "Polaroid",
+  "value": "s9",
+  "is_pro": true,
+  "is_active": true,
+  "show_on_home_screen": true,
+  "priority_point": 870
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/s34.resized.jpeg",
+  "name": "Novelistic",
+  "value": "s19",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 860
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/elsa1.jpg",
+  "name": "Princess🔥",
+  "value": "s53",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 850
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/s31.resized.jpeg",
+  "name": "Cinematic",
+  "value": "s16",
+  "is_pro": true,
+  "is_active": true,
+  "show_on_home_screen": true,
+  "priority_point": 830
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/s81.resized.jpg",
+  "name": "Fonko Pop",
+  "value": "s50",
+  "is_pro": true,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 820
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/s63.resized.jpeg",
+  "name": "Cute Halloween",
+  "value": "s45",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 810
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/Magic_new.resized.jpeg",
+  "name": "Magic",
+  "value": "s15",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 800
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/anime.resized.jpeg",
+  "name": "Anime",
+  "value": "s23",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 790
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/Watercolor_painting_new.resized.jpeg",
+  "name": "Watercolor Painting",
+  "value": "s10",
+  "is_pro": true,
+  "is_active": true,
+  "show_on_home_screen": true,
+  "priority_point": 780
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/artistic_portrait.jpg",
+  "name": "Portrait",
+  "value": "s37",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 770
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/s44.JPG",
+  "name": "Van Gogh",
+  "value": "s27",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 760
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/neo_impressionist.resized.jpg",
+  "name": "Neo",
+  "value": "s29",
+  "is_pro": true,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 750
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/s54.resized.jpg",
+  "name": "Luminous",
+  "value": "s36",
+  "is_pro": true,
+  "is_active": true,
+  "show_on_home_screen": true,
+  "priority_point": 740
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/Origami.jpeg",
+  "name": "Origami",
+  "value": "s38",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 730
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/Comic_book_new.resized.jpeg",
+  "name": "Comic Book",
+  "value": "s11",
+  "is_pro": true,
+  "is_active": true,
+  "show_on_home_screen": true,
+  "priority_point": 710
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/3D_render_new.jpeg",
+  "name": "3D Render",
+  "value": "s5",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 700
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/magazine_cover_new.jpeg",
+  "name": "Magazine Cover",
+  "value": "s6",
+  "is_pro": true,
+  "is_active": false,
+  "show_on_home_screen": false,
+  "priority_point": 690
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/Bokeh.resized.jpeg",
+  "name": "Bokeh",
+  "value": "s7",
+  "is_pro": true,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 680
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/Studio_lighting_new.jpeg",
+  "name": "Studio Lighting",
+  "value": "s8",
+  "is_pro": true,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 670
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/Steampunk_new.resized.jpeg",
+  "name": "Steampunk",
+  "value": "s12",
+  "is_pro": true,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 660
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/s28.resized.jpeg",
+  "name": "Behance HD",
+  "value": "s13",
+  "is_pro": true,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 650
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/digital_art.resized.jpg",
+  "name": "Digital Art",
+  "value": "s14",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 640
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/s33.resized.jpeg",
+  "name": "Fictional Character",
+  "value": "s18",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 630
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/s35.resized.jpeg",
+  "name": "Authentic",
+  "value": "s20",
+  "is_pro": true,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 620
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/s36.resized.jpeg",
+  "name": "Mystical",
+  "value": "s21",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 610
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/animation_new.resized.jpeg",
+  "name": "Animation",
+  "value": "s24",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 600
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/anime_girl_new.resized.jpeg",
+  "name": "Anime Girl",
+  "value": "s25",
+  "is_pro": true,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 590
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/anime_man_new.resized.jpeg",
+  "name": "Anime Man",
+  "value": "s26",
+  "is_pro": true,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 580
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/cgi.resized.jpg",
+  "name": "CGI",
+  "value": "s30",
+  "is_pro": true,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 570
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/pop_art.resized.jpg",
+  "name": "Pop Art",
+  "value": "s31",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 560
+ },
+ {
+  "image_url": "https://storage.googleapis.com/app-contents.wonderai.app/realistic_style_images/3d_game.resized.jpg",
+  "name": "3D Game",
+  "value": "s32",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 550
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/color_painting.resized.jpeg",
+  "name": "Color Painting",
+  "value": "s39",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 540
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/Abstract_curves.resized.jpeg",
+  "name": "Abstract Curves",
+  "value": "s40",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 530
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/Striking.resized.jpeg",
+  "name": "Striking",
+  "value": "s41",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 520
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/Hyperreal.resized.jpeg",
+  "name": "Hyperreal",
+  "value": "s42",
+  "is_pro": false,
+  "is_active": false,
+  "show_on_home_screen": false,
+  "priority_point": 510
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/Graffiti.resized.jpeg",
+  "name": "Graffiti",
+  "value": "s43",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": false,
+  "priority_point": 500
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/cartoon.resized.jpeg",
+  "name": "Car Toon",
+  "value": "s48",
+  "is_pro": false,
+  "is_active": false,
+  "show_on_home_screen": false,
+  "priority_point": 490
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/realistic_style_images/valentine_after_new.resized.jpg",
+  "name": "Valentine\\'s Day",
+  "value": "s51",
+  "is_pro": false,
+  "is_active": false,
+  "show_on_home_screen": false,
+  "priority_point": 480
+ },
+ {
+  "image_url": "https://app-contents.wonderai.app/style_images/NoStyle.png",
+  "name": "No Style",
+  "value": "s1",
+  "is_pro": false,
+  "is_active": true,
+  "show_on_home_screen": true,
+  "priority_point": 2
+ }
+]
