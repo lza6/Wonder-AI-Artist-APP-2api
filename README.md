@@ -4,6 +4,8 @@
 产物：可直接跑的 OpenAI 兼容网关 + 网页 Demo + 压测脚本 + 逐字段协议文档。
 
 完整协议（`rs` 签名算法、`ip` 高级版标记、字段漂移、错误码）见 **[`docs/PROTOCOL.md`](docs/PROTOCOL.md)**。
+new-api 接入（两条路线 + Go 渠道骨架 + 验收清单）见 **[`docs/NEW-API-INTEGRATION.md`](docs/NEW-API-INTEGRATION.md)**。
+分身通道结论见 **[`docs/DREAMBOOTH.md`](docs/DREAMBOOTH.md)**。
 
 ---
 
@@ -23,6 +25,20 @@
 | 免费档限制 | ✅ 已探明 | 非高级标记 → 5 积分后 `499 limit`；高级标记 → 0 积分仍出图 |
 | 广告加积分 `credit/inc` | ❌ 不可用 | 恒返回 `{"success":false}`（需广告回调凭据） |
 | Dreambooth AI 分身 | ⚠️ R1 阻塞 | 端点/参数/素材托管链路全部还原并可调用；训练被付费包门禁清理 → 见 [`docs/DREAMBOOTH.md`](docs/DREAMBOOTH.md) |
+
+---
+
+## 30 秒速查（对接只需要这一段）
+
+```text
+base    : https://api.wonderai.app/api/v1/
+签名头   : ts(epoch ms) / ip(679449021=高级版) / rs(SHA256 大写)
+rs      : sha256(body + "_COvereD062doiNgS855TOshIBa_" + userId + "_" + ts).hex().upper()
+账号    : userId 任意字符串 = 新账号（无注册），ip=679449021 积分归零仍可出图
+文生图   : POST image/create  {userId,prompt,style,provider,model,numImages,aspectRatio,...} → {urls[],seed}
+超分     : POST https://highres.wonderai.app/esrgan {userId,url,platform} + Bearer → {highResImageUrl}
+坑      : rs 大写 / 整数浮点必须发 int（8.0→401）/ numImages 才是张数 / 产物只留 30 天
+```
 
 ---
 
