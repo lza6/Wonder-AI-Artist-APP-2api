@@ -84,7 +84,7 @@ async def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("-n", "--total", type=int, default=40)
     parser.add_argument("-c", "--concurrency", type=int, default=4)
-    parser.add_argument("--base", default="http://127.0.0.1:8950")
+    parser.add_argument("--base", default="http://127.0.0.1:8960")
     parser.add_argument("--target", choices=["generate", "upscale"], default="generate")
     parser.add_argument("--verify-images", action="store_true")
     parser.add_argument("--upscale-source", default=None, help="image URL for --target upscale")

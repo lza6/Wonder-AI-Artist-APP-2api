@@ -30,13 +30,13 @@
 
 ```bash
 # 依赖：requests fastapi uvicorn httpx pillow（本机已具备）
-python server.py                 # 默认 0.0.0.0:8950
-# 浏览器打开 http://127.0.0.1:8950/  → Demo 页
+python server.py                 # 默认 0.0.0.0:8960
+# 浏览器打开 http://127.0.0.1:8960/  → Demo 页
 ```
 
 ```bash
 # OpenAI 兼容调用
-curl -s http://127.0.0.1:8950/v1/images/generations \
+curl -s http://127.0.0.1:8960/v1/images/generations \
   -H 'content-type: application/json' \
   -d '{"prompt":"a crystal fox in a neon forest","model":"wonder-premium","n":2,"size":"1024x576","style":"Anime"}'
 ```
@@ -70,7 +70,7 @@ python wonder_client.py "a lighthouse on a cliff at sunset" --style s2 --n 2 --a
 | GET | `/wonder/account` | 当前账号积分、今日次数、历史 prompt |
 | GET | `/wonder/pool` | 号池状态、并发上限 |
 
-环境变量：`WONDER_UIDS=uid1,uid2`（预置号池）、`WONDER_CONCURRENCY=4`（上游并发闸门）、`WONDER_PORT=8950`。
+环境变量：`WONDER_UIDS=uid1,uid2`（预置号池）、`WONDER_CONCURRENCY=4`（上游并发闸门）、`WONDER_PORT=8960`。
 
 ---
 

@@ -1,6 +1,6 @@
 """Wonder AI 2API gateway — OpenAI-compatible in front of api.wonderai.app.
 
-Run:  python server.py            (defaults 0.0.0.0:8950)
+Run:  python server.py            (defaults 0.0.0.0:8960)
 Env:  WONDER_UIDS=uid1,uid2      pre-seed the account pool (optional)
       WONDER_CONCURRENCY=4       max in-flight upstream generations
       WONDER_PORT=8950
@@ -32,7 +32,7 @@ from wonder_client import (
 )
 
 MAX_CONCURRENCY = int(os.getenv("WONDER_CONCURRENCY", "4"))
-PORT = int(os.getenv("WONDER_PORT", "8950"))
+PORT = int(os.getenv("WONDER_PORT", "8960"))
 HERE = os.path.dirname(os.path.abspath(__file__))
 PROVIDERS = ("premium", "flux", "falai", "normal")
 MODEL_TO_PROVIDER = {f"wonder-{p}": p for p in PROVIDERS}

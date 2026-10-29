@@ -12,7 +12,7 @@ async def main():
         page.on("console", lambda m: errors.append(m.text) if m.type == "error" else None)
         page.on("pageerror", lambda e: errors.append(str(e)))
 
-        await page.goto("http://127.0.0.1:8950/", wait_until="networkidle")
+        await page.goto("http://127.0.0.1:8960/", wait_until="networkidle")
         await page.wait_for_selector(".style-grid button", timeout=20000)
         style_count = await page.locator(".style-grid button").count()
         account_text = (await page.locator("#account").inner_text()).replace("\n", " | ")
