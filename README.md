@@ -22,7 +22,7 @@
 | 号池（任意 userId = 新账号） | ✅ 已验证 | 无需注册，UUID 即账号 |
 | 免费档限制 | ✅ 已探明 | 非高级标记 → 5 积分后 `499 limit`；高级标记 → 0 积分仍出图 |
 | 广告加积分 `credit/inc` | ❌ 不可用 | 恒返回 `{"success":false}`（需广告回调凭据） |
-| Dreambooth 分身 | ⬜ 未接入 | 端点已定位，本轮未深挖 |
+| Dreambooth AI 分身 | ⚠️ R1 阻塞 | 端点/参数/素材托管链路全部还原并可调用；训练被付费包门禁清理 → 见 [`docs/DREAMBOOTH.md`](docs/DREAMBOOTH.md) |
 
 ---
 
